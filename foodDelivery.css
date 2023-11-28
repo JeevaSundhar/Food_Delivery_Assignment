@@ -37,7 +37,7 @@ nav a{
 .icon-column {
     display: flex;
     gap: 10px;
-    /* margin-left: -20%; */
+    
 }
 
 .icon {

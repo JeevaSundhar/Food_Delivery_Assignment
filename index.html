@@ -7,23 +7,39 @@
   <title>Food Delivery</title>
 </head>
 <body>
-
-    <nav>
-        <div class="menu-column">
-            <div class="menu-item"><a href="">Home</a></div>
-            <div class="menu-item"><a href="">Order</a></div>
-            <div class="menu-item"><a href="">Food</a></div>
-            <div class="menu-item"><a href="">Restaurant</a></div>
-            <div class="menu-item"><a href="">Testimonials</a></div>
-            <div class="menu-item"><a href="">Contact Us</a></div>
-        </div>
-        <div class="icon-column">
-            <div class="icon"><a href="">&#9990;</a></div>
-            <div class="icon"><a href="">&#128722;
-              
-            </a></div>
-        </div>
-    </nav>
+    <header class="header">
+        <nav class="navbar">
+          <div class="hamburger-strips" id="hamburger-strips">
+            <span class="line strip-a"></span>
+            <span class="line strip-b"></span>
+            <span class="line strip-c"></span>
+          </div>
+  
+          <ul class="hiperlinks-container">
+            <li class="hiperlink"><a href="#">Home</a></li>
+            <li class="hiperlink"><a href="#">Order</a></li>
+            <li class="hiperlink"><a href="#">Food</a></li>
+            <li class="hiperlink"><a href="#">Restaurant</a></li>
+            <li class="hiperlink"><a href="#">Testimonials</a></li>
+            <li class="hiperlink"><a href="#">Contact Us</a></li>
+          </ul>
+  
+          <div class="icon">
+            <div>
+              <a href="https://api.whatsapp.com/send?phone=9443941669&text=Hello%20there!">
+                <img src="./whatsapp.svg" alt="" />
+                <!-- <img src="./images/cart.svg" alt="" /> -->
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src="./cart.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+    
 
     <div class="top-content">
         <div class="image-container">
@@ -46,17 +62,17 @@
         <div class="container">
             <div class="card">
                 <img src="./img2.jpg"/>
-                <h2>BURGER</h2>
+                <h2 class="align-center">BURGER</h2>
                 <p>Lorem Ipsum has been the industry's standard dummy text</p>
             </div>
             <div class="card">
                 <img src="./img1.jpg"/>
-                <h2>PASTA</h2>
+                <h2 class="align-center">PASTA</h2>
                 <p>Lorem Ipsum has been the industry's standard dummy text</p>
             </div>
             <div class="card">
                 <img src="./img3.jpg"/>
-                <h2>PIZZA</h2>
+                <h2 class="align-center">PIZZA</h2>
                 <p>Lorem Ipsum has been the industry's standard dummy text</p>
             </div>
         </div>
@@ -66,7 +82,12 @@
         </div>
         
     </div>
-    
+    <script>
+        const hamburger = document.getElementById("hamburger-strips");
+        hamburger.addEventListener("click", (e) => {
+          hamburger.classList.toggle("open");
+        });
+    </script>
 </body>
 
 </html>

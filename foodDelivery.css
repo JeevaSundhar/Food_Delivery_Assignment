@@ -1,4 +1,5 @@
 
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,7 +7,6 @@ body {
     box-sizing: border-box;
     background-color: #f4f4f4;
 }
-
 
 nav {
     background-color: white;
@@ -21,28 +21,159 @@ nav a{
     text-decoration: none;
 }
 
-.menu-column {
-    display: flex;
-    gap: 20px;
-    flex-basis:100%;
-    margin-right:10rem;
-    margin-left:10rem;
-    justify-content: space-between;
+.header {
+    background-color: #fff;
+    position: sticky;
+    width: 100%;
+    z-index: 10;
+    color: #000;
 }
 
-.menu-item {
+
+.hiperlinks-container {
+    display: flex;
+    margin-left: 10%;
+}
+
+.hiperlink {
     padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    list-style-type: none;
 }
 
-.icon-column {
-    display: flex;
-    gap: 10px;
-    
+.hiperlink a {
+    text-decoration: none;
+    color: #000;
+    font-size: larger;
+    padding: 15px 20px;
 }
+
+.hiperlink a:hover {
+    color: #f3766d;
+}
+
+.hamburger-strips {
+    display: none;
+    width: 35px;
+    height: 30px;
+    margin: 10px 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.line {
+    background-color: #454141;
+    position: absolute;
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    transition-duration: 0.5s;
+}
+
+.strip-a {
+    top: 0;
+    left: 0;
+}
+
+.strip-b {
+    top: 13px;
+    left: 0;
+    opacity: 1;
+}
+
+.strip-c {
+    bottom: 0;
+    left: 0;
+}
+
+.hamburger-strips.open .strip-a {
+    transform: rotate(45deg);
+    top: 13px;
+}
+
+.hamburger-strips.open .strip-b {
+    opacity: 0;
+}
+
+.hamburger-strips.open .strip-c {
+    transform: rotate(-45deg);
+    top: 13px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+        padding-left: 5px;
+    }
+
+    .hamburger-strips {
+        display: inline-block;
+    }
+
+    .hiperlinks-container {
+        display: none;
+        margin-left: 0%;
+        padding:0px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .hiperlinks-container {
+        position: absolute;
+        top: 60px;
+        background-color: #fbf5f5;
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: -100%;
+        transition: 0.6s ease-in-out;
+        padding-top: 20px;
+    }
+
+    .hiperlink {
+        margin: 20px;
+    }
+
+    .hiperlink a {
+        font-size: 30px;
+        font-size: larger;
+    }
+
+    .hamburger-strips.open + .hiperlinks-container {
+        left: 0;
+    }
+
+    .heading {
+        margin: 40% 10%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hiperlink a {
+        font-size: 18px;
+        padding: 0;
+    }
+}
+
 
 .icon {
-    font-size: 20px;
-    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    right: 0;
+    margin-right: 3vw;
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
 }
 
 @media (max-width: 768px) {
@@ -64,6 +195,7 @@ nav a{
         rgb(241, 107, 199),
         rgb(235, 195, 64)
     );
+    margin-top: -2rem;
 }
 
 .image-container {
@@ -172,4 +304,8 @@ nav a{
     .card {
     width: 100%;
     }
+}
+
+.align-center{
+    text-align: center;
 }
